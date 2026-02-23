@@ -114,3 +114,12 @@ h1{
 }
 
 
+#txt{
+    
+    background-color: black;
+    width: 30%;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 5px;
+}

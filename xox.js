@@ -1,6 +1,8 @@
 const cells = document.querySelectorAll(".cell");
 const resetBtn = document.getElementById("reset");
 
+
+
 let currentPlayer = "X";
 let gameActive = true;
 
@@ -28,6 +30,7 @@ function checkWin() {
     });
   });
 }
+
 
 function checkDraw() {
   return [...cells].every(cell => cell.innerText !== "");
@@ -60,6 +63,24 @@ cells.forEach((cell, index) => {
       return;
     }
 
+    if (checkWin()) {
+      txt.innerText = currentPlayer + " wins!";
+    } else if (checkDraw()) {
+      txt.innerText = "It's a draw!";
+    } else {
+      txt.innerText = "Current Player: " + currentPlayer;
+    }
+
     currentPlayer = currentPlayer === "X" ? "O" : "X";
   });
 });
+
+
+let txt = document.getElementById("txt");
+if (checkWin()) {
+  txt.innerText = currentPlayer + " wins!";
+} else if (checkDraw()) {
+  txt.innerText = "It's a draw!";
+} else {
+  txt.innerText = "Current Player: " + currentPlayer;
+}
