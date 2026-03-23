@@ -58,6 +58,11 @@ cells.forEach((cell, index) => {
       
       gameActive = false;
       result.innerText=`${currentPlayer} wins`
+      result.style.backgroundColor = "black";
+      result.style.backgroundColor = "black";
+      result.style.padding = "10px";
+      result.style.width = "60px";
+      result.style.borderRadius = "10px";
       // alert(currentPlayer + " wins!");
       return;
     }
@@ -65,7 +70,13 @@ cells.forEach((cell, index) => {
     if (checkDraw()) {
       
       gameActive = false;
-      result.innerText=`It is a draw!`
+      result.innerText=`It is a draw`
+      result.style.backgroundColor = "black";
+      result.style.backgroundColor = "black";
+      result.style.padding = "10px";
+      result.style.width = "30%";
+      result.style.borderRadius = "10px";
+      
       // alert("It's a draw!");
       return;
     }
