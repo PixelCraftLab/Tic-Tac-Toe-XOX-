@@ -1,6 +1,8 @@
 const cells = document.querySelectorAll(".cell");
 const resetBtn = document.getElementById("reset");
 
+let txt = document.getElementById("txt");
+
 
 
 let currentPlayer = "X";
@@ -52,14 +54,16 @@ cells.forEach((cell, index) => {
     cell.innerText = currentPlayer;
 
     if (checkWin()) {
-      alert(currentPlayer + " wins!");
+      
       gameActive = false;
+      // alert(currentPlayer + " wins!");
       return;
     }
 
     if (checkDraw()) {
-      alert("It's a draw!");
+      
       gameActive = false;
+      // alert("It's a draw!");
       return;
     }
 
@@ -71,16 +75,18 @@ cells.forEach((cell, index) => {
       txt.innerText = "Current Player: " + currentPlayer;
     }
 
+    if (checkWin()) {
+      txt.innerText = currentPlayer + " wins!";
+    } else if (checkDraw()) {
+      txt.innerText = "It's a draw!";
+    } 
+      
+    
+
     currentPlayer = currentPlayer === "X" ? "O" : "X";
+
+    
   });
 });
 
 
-let txt = document.getElementById("txt");
-if (checkWin()) {
-  txt.innerText = currentPlayer + " wins!";
-} else if (checkDraw()) {
-  txt.innerText = "It's a draw!";
-} else {
-  txt.innerText = "Current Player: " + currentPlayer;
-}
