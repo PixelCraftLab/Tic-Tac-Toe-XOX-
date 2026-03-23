@@ -46,6 +46,7 @@ resetBtn.addEventListener("click", () => {
 
 
 
+let result = document.getElementById("result")
 
 cells.forEach((cell, index) => {
   cell.addEventListener("click", () => {
@@ -56,6 +57,7 @@ cells.forEach((cell, index) => {
     if (checkWin()) {
       
       gameActive = false;
+      result.innerText=`${currentPlayer} wins`
       // alert(currentPlayer + " wins!");
       return;
     }
@@ -63,6 +65,7 @@ cells.forEach((cell, index) => {
     if (checkDraw()) {
       
       gameActive = false;
+      result.innerText=`It is a draw!`
       // alert("It's a draw!");
       return;
     }
